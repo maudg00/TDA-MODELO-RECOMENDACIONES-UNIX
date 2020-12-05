@@ -1,0 +1,1 @@
+Aquí irán todos los diseños: Documentación, diagramas, folder con diseños relacionados a la BDD, etc.

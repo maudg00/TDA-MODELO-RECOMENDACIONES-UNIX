@@ -1,0 +1,84 @@
+
+CREATE TABLE usuarios(
+id_usuario int  AUTO_INCREMENT PRIMARY KEY,
+username varchar(50) NOT NULL,
+password varchar(50) NOT NULL,
+nombre varchar(50) NOT NULL,
+edad int NOT NULL,
+genero ENUM('M', 'F',  'Otro')
+) CHARSET=latin1;
+
+CREATE TABLE peliculas(
+id_peliculas int AUTO_INCREMENT PRIMARY KEY,
+titulo varchar(50) NOT NULL,
+drama int NOT NULL,
+accion int NOT NULL,
+animacion int NOT NULL,
+terror int NOT NULL,
+comedia int NOT NULL,
+G tinyint(1),
+PG13 tinyint(1),
+R tinyint(1),
+director varchar(50) NOT NULL,
+actor_principal varchar(50),
+casa_productora varchar(50),
+duracion INT NOT NULL,
+anio_publicacion int NOT NULL
+) CHARSET=latin1;
+
+CREATE TABLE calificacion_peliculas(
+id_usuario int NOT NULL,
+id_pelicula int NOT NULL,
+calificacion int NOT NULL
+) CHARSET=latin1;
+
+INSERT INTO usuarios VALUES(NULL, 'maudg00', 'hola123', 'Mauricio', 20,'M');
+INSERT INTO usuarios VALUES(NULL, 'berny99gr', 'escuelahorror', 'Bernardo', 21,'M');
+INSERT INTO usuarios VALUES(NULL, 'ftapia', 'thebestpassword', 'Fernando', 21,'M');
+INSERT INTO peliculas VALUES( NULL, 'Pulp Fiction', 85, 75, 0, 5, 5, 0, 0, 1, 'Quentin Tarantino', 'Samuel L. Jackson', 'A Band Apart', 154, 1994);
+INSERT INTO peliculas VALUES( NULL, 'Inglorious Bastard', 85, 80, 0, 0, 0, 0, 0, 1, 'Quentin Tarantino', 'Brad Pitt', 'Universal Pictures', 153, 2009);
+INSERT INTO peliculas VALUES( NULL, 'Toy Story', 20, 10, 100, 10, 70, 1, 0, 0, 'John Lasseter', 'Tom Hanks', 'Pixar', 81, 1995);
+INSERT INTO peliculas VALUES( NULL, 'The Good Dinosaur', 60, 40, 100, 5, 55, 1, 0, 0, 'Peter Sohn', 'Raymond Ochoa', 'Pixar', 95, 2015);
+INSERT INTO peliculas VALUES( NULL, 'The Conjuring', 80, 10, 10, 95, 0, 0, 0, 1, 'James Wan', 'Patrick Wilson', 'Safran Company', 112, 2013);
+INSERT INTO peliculas VALUES( NULL, 'A Nightmare on Elm Street', 55, 15, 0, 100, 0, 0, 0, 1, 'Wes Craven', 'Johhny Deep', 'New Line Cinema', 91, 1984);
+INSERT INTO peliculas VALUES( NULL, 'Wallace & Gromit: The Curse of the Were-Rabbit', 45, 50, 100, 25, 70, 1, 0, 0, 'Nick Park', 'Peter Sallis', 'DreamWorks Pictures', 85, 2005);
+INSERT INTO peliculas VALUES( NULL, 'Star Wars', 60, 70, 20, 0, 20, 1, 0, 0, 'George Lucas', 'Mark Hamill', 'Lucasfilm', 121, 1997);
+INSERT INTO peliculas VALUES( NULL, 'Grown Ups 2', 10, 10, 5, 0, 80, 0, 1, 0, 'Dennis Dugan', 'Adam Sandler', 'Columbia Pictures', 101, 2013);
+INSERT INTO peliculas VALUES( NULL, 'Shrek 2', 70, 40, 100, 0, 70, 1, 0, 0, 'Andrew Adamson', 'Mike Mayers', 'Dreamworks', 93, 2004);
+INSERT INTO peliculas VALUES( NULL, 'Knives Out', 80, 20, 0, 0, 45, 0, 1, 0, 'Rian Johnson', 'Ana de Armas', 'FilmNation Entertainment', 130, 2019);
+INSERT INTO peliculas VALUES( NULL, 'Parasite', 90, 30, 0, 50, 0, 0, 0, 1, 'Bong Joong-ho', 'Song Kang-ho', 'Barunson E&A', 132, 2019);
+INSERT INTO peliculas VALUES( NULL, 'The Last Air Bender', 20, 65, 20, 0, 40, 0, 1, 0, 'M. Night Shyamalan', 'Noah Ringer ', 'Nickelodeon Movies', 103, 2010);
+INSERT INTO peliculas VALUES( NULL, 'Jack Y Jill', 20, 10, 10, 0, 90, 0, 1, 0, 'Dennis Dugan', 'Adam Sandler', 'Columbia Pictures', 91, 2011);
+INSERT INTO peliculas VALUES( NULL, 'Avengers Endgame', 75, 95, 0, 0, 70, 0, 1, 0, 'J & A Russo', 'Robert Downey Jr.', 'Disney', 182, 2019);
+INSERT INTO peliculas VALUES( NULL, 'Joker', 90, 75, 0, 50, 0, 0, 0, 1, 'Todd Phillips', 'Joaquin Pheonix', 'Warner Brothers', 124, 2019);
+INSERT INTO peliculas VALUES( NULL, 'The Emoji Movie', 30, 75, 95, 0, 90, 1, 0, 0, 'Tony Leondis', 'T.J Miller', 'Sony Pictures Animations', 90, 2017);
+INSERT INTO peliculas VALUES( NULL, 'Grown Ups', 50, 0, 0, 0, 95, 0, 1, 0, 'Dennis Dugan', 'Adam Sandler', 'Columbia Pictures', 102, 2010);
+INSERT INTO peliculas VALUES( NULL, 'Annabelle', 70, 50, 0, 95, 0, 0, 1, 0, 'John R. Leonetti', 'Annabelle Wallis', 'Atomic Monster Productions', 99, 2014);
+INSERT INTO peliculas VALUES( NULL, 'Los Increibles', 50, 95, 95, 0, 60, 1, 0, 0, 'Brad Bird', 'Holly Hunter', 'Pixar', 116, 2004);
+INSERT INTO calificacion_peliculas VALUES(1, 15, 4); 
+INSERT INTO calificacion_peliculas VALUES(1, 16, 5); 
+INSERT INTO calificacion_peliculas VALUES(1, 17, 1); 
+INSERT INTO calificacion_peliculas VALUES(1, 18, 2); 
+INSERT INTO calificacion_peliculas VALUES(1, 19, 5); 
+INSERT INTO calificacion_peliculas VALUES(1, 13, 1); 
+INSERT INTO calificacion_peliculas VALUES(2, 10, 5); 
+INSERT INTO calificacion_peliculas VALUES(2, 11, 4); 
+INSERT INTO calificacion_peliculas VALUES(2, 12, 5); 
+INSERT INTO calificacion_peliculas VALUES(2, 13, 1); 
+INSERT INTO calificacion_peliculas VALUES(2, 14, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 1, 5); 
+INSERT INTO calificacion_peliculas VALUES(3, 2, 5); 
+INSERT INTO calificacion_peliculas VALUES(3, 3, 4); 
+INSERT INTO calificacion_peliculas VALUES(3, 4, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 5, 3); 
+INSERT INTO calificacion_peliculas VALUES(3, 6, 4); 
+INSERT INTO calificacion_peliculas VALUES(3, 7, 5); 
+INSERT INTO calificacion_peliculas VALUES(3, 8, 4); 
+INSERT INTO calificacion_peliculas VALUES(3, 9, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 10, 4); 
+INSERT INTO calificacion_peliculas VALUES(3, 13, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 15, 4); 
+INSERT INTO calificacion_peliculas VALUES(3, 16, 5); 
+INSERT INTO calificacion_peliculas VALUES(3, 17, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 18, 1); 
+INSERT INTO calificacion_peliculas VALUES(3, 20, 4); 
